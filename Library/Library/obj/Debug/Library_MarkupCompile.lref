@@ -1,10 +1,13 @@
 ﻿
 
-FE:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\AddNewAuthorWindow.xaml;;
-FE:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\AddNewGenreWindow.xaml;;
-FE:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\AddNewLanguageWindow.xaml;;
-FE:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\AddNewPublisherWindow.xaml;;
-FE:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\BookCreatingWindow.xaml;;
-FE:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\BooksWindow.xaml;;
-FE:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\MainWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewAuthorWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewGenreWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewLanguageWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewPublisherWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewBookWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\MainWindows\BooksWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\MainWindows\BorrowWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\MainWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewReaderWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\MainWindows\ReadersWindow.xaml;;
 

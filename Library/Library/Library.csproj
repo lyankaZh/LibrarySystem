@@ -68,35 +68,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddNewAuthorWindow.xaml.cs">
+    <Compile Include="AddWindows\AddNewAuthorWindow.xaml.cs">
       <DependentUpon>AddNewAuthorWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BookModel.cs" />
-    <Compile Include="ReaderAddingWindow.xaml.cs">
-      <DependentUpon>ReaderAddingWindow.xaml</DependentUpon>
+    <Compile Include="AuthorsList.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="ViewModels\BookModel.cs" />
+    <Compile Include="MainWindows\BorrowWindow.xaml.cs">
+      <DependentUpon>BorrowWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddWindows\AddNewReaderWindow.xaml.cs">
+      <DependentUpon>AddNewReaderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindows\ReadersWindow.xaml.cs">
+      <DependentUpon>ReadersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BooksDisplayViewModel.cs" />
     <Compile Include="ViewModels\CreatingBookViewModel.cs" />
-    <Page Include="AddNewAuthorWindow.xaml">
+    <Page Include="AddWindows\AddNewAuthorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddNewGenreWindow.xaml">
+    <Page Include="AddWindows\AddNewGenreWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddNewLanguageWindow.xaml">
+    <Page Include="AddWindows\AddNewLanguageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddNewPublisherWindow.xaml">
+    <Page Include="AddWindows\AddNewPublisherWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BookCreatingWindow.xaml">
+    <Page Include="AddWindows\AddNewBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BooksWindow.xaml">
+    <Page Include="MainWindows\BooksWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindows\BorrowWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -104,30 +117,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddNewGenreWindow.xaml.cs">
+    <Compile Include="AddWindows\AddNewGenreWindow.xaml.cs">
       <DependentUpon>AddNewGenreWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddNewLanguageWindow.xaml.cs">
+    <Compile Include="AddWindows\AddNewLanguageWindow.xaml.cs">
       <DependentUpon>AddNewLanguageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddNewPublisherWindow.xaml.cs">
+    <Compile Include="AddWindows\AddNewPublisherWindow.xaml.cs">
       <DependentUpon>AddNewPublisherWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BookCreatingWindow.xaml.cs">
-      <DependentUpon>BookCreatingWindow.xaml</DependentUpon>
+    <Compile Include="AddWindows\AddNewBookWindow.xaml.cs">
+      <DependentUpon>AddNewBookWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BooksWindow.xaml.cs">
+    <Compile Include="MainWindows\BooksWindow.xaml.cs">
       <DependentUpon>BooksWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ReaderAddingWindow.xaml">
+    <Page Include="AddWindows\AddNewReaderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindows\ReadersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,9 +184,9 @@
     <Resource Include="background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
+    <ProjectReference Include="..\Domain\DAL.csproj">
       <Project>{2a1b4d7b-cad9-4932-9999-f08e85cd7c81}</Project>
-      <Name>Domain</Name>
+      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

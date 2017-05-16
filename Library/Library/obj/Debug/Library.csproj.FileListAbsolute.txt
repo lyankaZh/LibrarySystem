@@ -44,3 +44,41 @@ E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Li
 E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewPublisherWindow.baml
 E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewAuthorWindow.g.cs
 E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewAuthorWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\Library.exe.config
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\Library.exe
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\Library.pdb
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\Library.exe
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\Library.pdb
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\Domain.dll
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\EntityFramework.dll
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\Domain.pdb
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\EntityFramework.xml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\App.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\Library_MarkupCompile.cache
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\Library_MarkupCompile.lref
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\Library.g.resources
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\Library.Properties.Resources.resources
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewAuthorWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewGenreWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewLanguageWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewPublisherWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewBookWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindows\BooksWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindows\BorrowWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewReaderWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindows\ReadersWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewAuthorWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewGenreWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewLanguageWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewPublisherWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewBookWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindows\BooksWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindows\BorrowWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddNewReaderWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindows\ReadersWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindow.baml

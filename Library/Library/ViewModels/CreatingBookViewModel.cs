@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using Domain.Models;
 using Domain.Repository;
 
@@ -13,71 +7,71 @@ namespace Library.ViewModels
 {
     public class CreatingBookViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<Genre> genres;
-        private ObservableCollection<Author> authors;
-        private ObservableCollection<Language> languages;
-        private ObservableCollection<Publisher> publishers;
-        UnitOfWork unitOfWork;
+        private ObservableCollection<Genre> _genres;
+        private ObservableCollection<Author> _authors;
+        private ObservableCollection<Language> _languages;
+        private ObservableCollection<Publisher> _publishers;
+        
 
-        public CreatingBookViewModel(UnitOfWork unitOfWork)
+        public CreatingBookViewModel(IUnitOfWork unit)
         {
-            this.unitOfWork = unitOfWork;
-            genres = new ObservableCollection<Genre>(unitOfWork.GenreRepository.Get());
-            languages = new ObservableCollection<Language>(unitOfWork.LanguageRepository.Get());
-            authors = new ObservableCollection<Author>(unitOfWork.AuthorRepository.Get());
-            publishers = new ObservableCollection<Publisher>(unitOfWork.PublisherRepository.Get());
+            var unitOfWork = unit;
+            _genres = new ObservableCollection<Genre>(unitOfWork.GenreRepository.Get());
+            _languages = new ObservableCollection<Language>(unitOfWork.LanguageRepository.Get());
+            _authors = new ObservableCollection<Author>(unitOfWork.AuthorRepository.Get());
+            _publishers = new ObservableCollection<Publisher>(unitOfWork.PublisherRepository.Get());
         }
 
         public ObservableCollection<Genre> Genres
         {
-            get { return genres; }
+            get { return _genres; }
             set
             {
-                if (value != genres)
+                if (value != _genres)
                 {
-                    genres = value;
+                    _genres = value;
                     NotifyPropertyChanged("Genres");
                 }
             }
         }
         public ObservableCollection<Language> Languages
         {
-            get { return languages; }
+            get { return _languages; }
             set
             {
-                if (value != languages)
+                if (value != _languages)
                 {
-                    languages = value;
+                    _languages = value;
                     NotifyPropertyChanged("Languages");
                 }
             }
         }
+
         public ObservableCollection<Author> Authors
         {
-            get { return authors; }
+            get { return _authors; }
             set
             {
-                if (value != authors)
+                if (value != _authors)
                 {
-                    authors = value;
+                    _authors = value;
                     NotifyPropertyChanged("Authors");
                 }
             }
         }
+
         public ObservableCollection<Publisher> Publishers
         {
-            get { return publishers; }
+            get { return _publishers; }
             set
             {
-                if (value != publishers)
+                if (value != _publishers)
                 {
-                    publishers = value;
+                    _publishers = value;
                     NotifyPropertyChanged("Publishers");
                 }
             }
         }
-
-       
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -23,12 +23,12 @@
             </Button.Background>
       
         </Button>
-        <Button x:Name="button_Copy" Content="Читачі" Grid.Column="1" HorizontalAlignment="Left" Margin="95,224,0,0" VerticalAlignment="Top" Width="161" Height="45" FontFamily="Blackadder ITC" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0">
+        <Button x:Name="readersButton" Content="Читачі" Grid.Column="1" HorizontalAlignment="Left" Margin="95,224,0,0" VerticalAlignment="Top" Width="161" Height="45" FontFamily="Blackadder ITC" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="readersButton_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFF5C277" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Button x:Name="button_Copy1" Content="Облік" Grid.Column="1" HorizontalAlignment="Left" Margin="95,305,0,0" VerticalAlignment="Top" Width="161" Height="45" FontFamily="Blackadder ITC" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0">
+        <Button x:Name="borrowButton" Content="Облік" Grid.Column="1" HorizontalAlignment="Left" Margin="95,305,0,0" VerticalAlignment="Top" Width="161" Height="45" FontFamily="Blackadder ITC" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="borrowButton_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFF5C277" Opacity="0.5"/>
             </Button.Background>

@@ -7,7 +7,7 @@ using Domain.Models;
 
 namespace Domain.Repository
 {
-    public class Repository<TEntity> where TEntity: class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         internal LibraryDbContext Context;
         internal DbSet<TEntity> DbSet;

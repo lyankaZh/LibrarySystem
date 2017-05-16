@@ -3,7 +3,7 @@ using Domain.Models;
 
 namespace Domain.Repository
 {
-    public class UnitOfWork: IDisposable
+    public class UnitOfWork: IUnitOfWork
     {
         private readonly LibraryDbContext _context = new LibraryDbContext();
 
