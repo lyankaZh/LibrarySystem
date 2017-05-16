@@ -1,0 +1,46 @@
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\bin\Debug\Library.exe.config
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\bin\Debug\Library.exe
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\bin\Debug\Library.pdb
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\MainWindow.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\App.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\Library_MarkupCompile.cache
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\Library_MarkupCompile.lref
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\MainWindow.baml
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\Library.g.resources
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\Library.Properties.Resources.resources
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\Library.exe
+E:\Універ\3 курс\1 семестр\БД та ІС\ОСНОВНЕ ЗАВДАННЯ\Library\Library\obj\Debug\Library.pdb
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\Library.exe.config
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\Library.exe
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\Library.pdb
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\Library.exe
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\Library.pdb
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\Domain.dll
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\EntityFramework.dll
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\Domain.pdb
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\EntityFramework.xml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\MainWindow.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\App.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\Library_MarkupCompile.cache
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\Library_MarkupCompile.lref
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\MainWindow.baml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\Library.g.resources
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\Library.Properties.Resources.resources
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\BooksWindow.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\BooksWindow.baml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\BookCreatingWindow.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\BookCreatingWindow.baml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewGenreWindow.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewLanguageWindow.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewPublisherWindow.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewGenreWindow.baml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewLanguageWindow.baml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewPublisherWindow.baml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewAuthorWindow.g.cs
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Library\obj\Debug\AddNewAuthorWindow.baml

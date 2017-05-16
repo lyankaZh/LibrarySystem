@@ -1,0 +1,20 @@
+﻿<Window x:Class="Library.AddNewAuthorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="AddNewAuthor" Height="260" Width="300">
+    <Grid>
+        <Label x:Name="surnameLabel" Content="Прізвище" HorizontalAlignment="Left" Margin="34,31,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.075,0.423"/>
+        <Label x:Name="nameLabel" Content="Ім'я" HorizontalAlignment="Left" Margin="34,62,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.075,0.423"/>
+        <Label x:Name="middleNameLabel" Content="По батькові" HorizontalAlignment="Left" Margin="34,93,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.075,0.423"/>
+        <TextBox x:Name="surnameTextBox" HorizontalAlignment="Left" Height="23" Margin="142,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="23" Margin="142,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="middleNameTextBox" HorizontalAlignment="Left" Height="23" Margin="142,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="saveButton" Content="Зберегти" HorizontalAlignment="Left" Margin="44,171,0,0" VerticalAlignment="Top" Width="75" Click="saveButton_Click"/>
+        <Button x:Name="cancelButton" Content="Скасувати" HorizontalAlignment="Left" Margin="154,171,0,0" VerticalAlignment="Top" Width="75" Click="cancelButton_Click"/>
+
+    </Grid>
+</Window>

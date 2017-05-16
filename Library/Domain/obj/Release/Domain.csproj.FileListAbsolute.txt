@@ -1,0 +1,10 @@
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\bin\Release\Domain.dll.config
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\bin\Release\Domain.dll
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\bin\Release\Domain.pdb
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\bin\Release\EntityFramework.dll
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\bin\Release\EntityFramework.SqlServer.dll
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\bin\Release\EntityFramework.xml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\bin\Release\EntityFramework.SqlServer.xml
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\obj\Release\Domain.csprojResolveAssemblyReference.cache
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\obj\Release\Domain.dll
+E:\Універ\3 курс\1 семестр\БД та ІС\Information system\Library information system\Library\Domain\obj\Release\Domain.pdb
