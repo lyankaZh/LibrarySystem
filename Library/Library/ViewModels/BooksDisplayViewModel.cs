@@ -8,7 +8,7 @@ using Library.Helpers;
 
 namespace Library.ViewModels
 {
-    public class BooksDisplayViewModel:INotifyPropertyChanged
+    public class BooksDisplayViewModel: INotifyPropertyChanged
     {
         private ObservableCollection<BookModel> _books;
 
@@ -36,8 +36,6 @@ namespace Library.ViewModels
         public void NotifyPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-       
+        }      
     }
 }

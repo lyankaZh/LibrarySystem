@@ -6,13 +6,22 @@
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
         Title="Книги" Height="455.909" Width="692.295" ResizeMode="CanMinimize">
+
+    <Window.Resources>
+        <RoutedUICommand x:Key="Edit" Text="Edit" />
+        <RoutedUICommand x:Key="Delete" Text="Delete" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Edit}" CanExecute="editCommand_CanExecute" Executed="editCommand_Executed" />
+        <CommandBinding Command="{StaticResource Delete}" CanExecute="deleteCommand_CanExecute" Executed="deleteCommand_Executed" />
+    </Window.CommandBindings>
     <Grid>
         <ToolBar x:Name="toolBar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="686" Height="42">
             <Button x:Name="addBookButton" Content="Add Book" Height="37" VerticalAlignment="Top" Width="75" Click="addBookButton_Click"/>
-            <Button x:Name="editBookButton" Content="Edit" Height="37" VerticalAlignment="Top" Width="58" IsEnabled="False"/>
-            <Button x:Name="deleteButton" Content="Delete" Height="37" VerticalAlignment="Top" Width="62" IsEnabled="False"/>
+            <Button x:Name="editBookButton" Command ="{StaticResource Edit}" Content="Edit" Height="37" VerticalAlignment="Top" Width="58" />
+            <Button x:Name="deleteButton" Command ="{StaticResource Delete}" Content="Delete" Height="37" VerticalAlignment="Top" Width="62" />
         </ToolBar>
-        <DataGrid x:Name="booksTable" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Height="318" Width="666" AutoGenerateColumns="False" ItemsSource="{Binding Books}">
+        <DataGrid x:Name="booksTable" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Height="318" Width="666" AutoGenerateColumns="False" ItemsSource="{Binding Books}" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Назва" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Автори" Binding="{Binding Authors}" />
