@@ -20,6 +20,10 @@
             <Button x:Name="addBookButton" Content="Add Book" Height="37" VerticalAlignment="Top" Width="75" Click="addBookButton_Click"/>
             <Button x:Name="editBookButton" Command ="{StaticResource Edit}" Content="Edit" Height="37" VerticalAlignment="Top" Width="58" />
             <Button x:Name="deleteButton" Command ="{StaticResource Delete}" Content="Delete" Height="37" VerticalAlignment="Top" Width="62" />
+            <Label x:Name="label" Content="Search criteria:" Height="37" VerticalAlignment="Top" Margin="0,5,0,-5"/>
+            <ComboBox x:Name="searchCriteriaComboBox" Height="37" Margin="0" VerticalAlignment="Top" Width="120" Text="Критерій пошуку" ItemsSource="{Binding criterias}"/>
+            <TextBox x:Name="searchTextTextBox" Height="37" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Enter text here..." GotFocus="searchTextTextBox_GotFocus" LostFocus="searchTextTextBox_LostFocus"/>
+            <Button x:Name="searchButton" Content="Search" Height="37" VerticalAlignment="Top" Width="59" Click="searchButton_Click"/>
         </ToolBar>
         <DataGrid x:Name="booksTable" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Height="318" Width="666" AutoGenerateColumns="False" ItemsSource="{Binding Books}" IsReadOnly="True" CanUserReorderColumns="False">
             <DataGrid.Columns>
