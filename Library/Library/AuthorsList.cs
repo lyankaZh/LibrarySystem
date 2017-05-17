@@ -17,7 +17,7 @@ namespace Library
         }
         public override string ToString()
         {
-            if (Authors != null)
+            if (Authors != null && Authors.Count!=0)
             {
                 StringBuilder stringToReturn = new StringBuilder();
                 foreach (var author in Authors)

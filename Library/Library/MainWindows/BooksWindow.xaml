@@ -21,7 +21,7 @@
             <Button x:Name="editBookButton" Command ="{StaticResource Edit}" Content="Edit" Height="37" VerticalAlignment="Top" Width="58" />
             <Button x:Name="deleteButton" Command ="{StaticResource Delete}" Content="Delete" Height="37" VerticalAlignment="Top" Width="62" />
         </ToolBar>
-        <DataGrid x:Name="booksTable" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Height="318" Width="666" AutoGenerateColumns="False" ItemsSource="{Binding Books}" IsReadOnly="True">
+        <DataGrid x:Name="booksTable" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Height="318" Width="666" AutoGenerateColumns="False" ItemsSource="{Binding Books}" IsReadOnly="True" CanUserReorderColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Назва" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Автори" Binding="{Binding Authors}" />

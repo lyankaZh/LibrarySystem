@@ -11,22 +11,62 @@ using Library.ViewModels;
 
 namespace Library.AddWindows
 {
+    public enum OperationType
+    {
+        Create,
+        Edit
+    }
+
+
     public partial class AddNewBookWindow
     {
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         readonly CreatingBookViewModel _creatingBookViewModel;
         private readonly BooksDisplayViewModel _booksDisplayViewModel;
+        private int _editedBookId;
+        private OperationType _operationType;
 
         private readonly double marginTopValue = 5;
 
-        public AddNewBookWindow(IUnitOfWork unitOfWork, BooksDisplayViewModel booksDisplayViewModel)
+        public AddNewBookWindow(IUnitOfWork unit, BooksDisplayViewModel booksDisplayViewModel)
         {
             InitializeComponent();
-            this.unitOfWork = unitOfWork;
-            _creatingBookViewModel = new CreatingBookViewModel(this.unitOfWork);
+            _unitOfWork = unit;
+            _creatingBookViewModel = new CreatingBookViewModel(_unitOfWork);
             _booksDisplayViewModel = booksDisplayViewModel;
             DataContext = _creatingBookViewModel;
-            //InitializeComboBoxes();
+            _operationType = OperationType.Create;
+        }
+
+        public AddNewBookWindow(IUnitOfWork unit, BooksDisplayViewModel booksDisplayViewModel, BookModel bookModel)
+        {
+            InitializeComponent();
+            _unitOfWork = unit;
+            _creatingBookViewModel = new CreatingBookViewModel(_unitOfWork);
+            _booksDisplayViewModel = booksDisplayViewModel;
+            DataContext = _creatingBookViewModel;
+            _operationType = OperationType.Edit;
+            _editedBookId = bookModel.BookId;
+            SetInitialTextOnTextBoxes(bookModel);
+        }
+
+
+        private void SetInitialTextOnTextBoxes(BookModel bookModel)
+        {
+            nameTextBox.Text = bookModel.Name;
+            yearTextBox.Text = bookModel.Year.ToString();
+            pagesTextBox.Text = bookModel.Pages.ToString();
+            locationTextBox.Text = bookModel.Location;
+            genreComboBox.SelectedValue = bookModel.Genre;
+            languageComboBox.SelectedValue = bookModel.Language;
+            publisherComboBox.SelectedValue = bookModel.Publisher;
+           
+            authorComboBox.SelectedValue = bookModel.Authors.Authors[0].AuthorId;
+
+            for (int i = 1; i < bookModel.Authors.Authors.Count; i++)
+            {
+                CreateNewComboBox().SelectedValue = bookModel.Authors.Authors[i].AuthorId;
+            }
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -36,72 +76,115 @@ namespace Library.AddWindows
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AreAllFieldsValid())
+            try
             {
-                var genre = ((Genre) genreComboBox.SelectedItem);
-                if (genre == null)
+                if (AreAllFieldsValid())
                 {
-                    MessageBox.Show("Вибрано неправильний жанр");
-                    return;
-                }
-
-                var language = (Language) languageComboBox.SelectedItem;
-                if (language == null)
-                {
-                    MessageBox.Show("Вибрано неправильну мову");
-                    return;
-                }
-
-                var publisher = (Publisher) publisherComboBox.SelectedItem;
-                if (publisher == null)
-                {
-                    MessageBox.Show("Вибрано неправильне видавництво");
-                    return;
-                }
-
-                var name = nameTextBox.Text;
-                var pages = int.Parse(pagesTextBox.Text);
-                var year = int.Parse(yearTextBox.Text);
-                var location = locationTextBox.Text;
-
-                List<Author> authors = new List<Author>();
-                foreach (ComboBox control in stackPanel.Children)
-                {
-                    var author = (Author)control.SelectedItem;
-                    if (author == null)
+                    var genre = ((Genre) genreComboBox.SelectedItem);
+                    if (genre == null)
                     {
-                        MessageBox.Show("Вибрано неправильного автора");
+                        MessageBox.Show("Вибрано неправильний жанр");
                         return;
                     }
-                    authors.Add(author);
-                }
 
-                Book book = new Book
-                {
-                    Name = name,
-                    Genre = unitOfWork.GenreRepository.GetById(genre.GenreId),
-                    Language = unitOfWork.LanguageRepository.GetById(language.LanguageId),
-                    Publisher = unitOfWork.PublisherRepository.GetById(publisher.PublisherId),
-                    Location = location,
-                    Year = year,
-                    Pages = pages,
-                    Authors = authors
-                };
-                unitOfWork.BookRepository.Insert(book);
+                    var language = (Language) languageComboBox.SelectedItem;
+                    if (language == null)
+                    {
+                        MessageBox.Show("Вибрано неправильну мову");
+                        return;
+                    }
 
-                foreach (var a in authors)
-                {
-                    a.Books.Add(book);
-                    unitOfWork.AuthorRepository.Update(a);
+                    var publisher = (Publisher) publisherComboBox.SelectedItem;
+                    if (publisher == null)
+                    {
+                        MessageBox.Show("Вибрано неправильне видавництво");
+                        return;
+                    }
+
+                    var name = nameTextBox.Text;
+                    var pages = int.Parse(pagesTextBox.Text);
+                    var year = int.Parse(yearTextBox.Text);
+                    var location = locationTextBox.Text;
+
+                    List<Author> authors = new List<Author>();
+                    foreach (ComboBox control in stackPanel.Children)
+                    {
+                        var author = (Author) control.SelectedItem;
+                        if (author == null)
+                        {
+                            MessageBox.Show("Вибрано неправильного автора");
+                            return;
+                        }
+                        authors.Add(author);
+                    }
+
+                    Book book = new Book
+                    {
+                        Name = name,
+                        Genre = _unitOfWork.GenreRepository.GetById(genre.GenreId),
+                        Language = _unitOfWork.LanguageRepository.GetById(language.LanguageId),
+                        Publisher = _unitOfWork.PublisherRepository.GetById(publisher.PublisherId),
+                        Location = location,
+                        Year = year,
+                        Pages = pages,
+                        Authors = authors
+                    };
+
+                    if (_operationType == OperationType.Create)
+                    {
+                        AddBook(book, authors);
+                    }
+                    else if (_operationType == OperationType.Edit)
+                    {
+                        EditBook(book);
+                    }
+
+                    _unitOfWork.Save();
+                    _booksDisplayViewModel.Books =
+                        new ObservableCollection<BookModel>(
+                            _unitOfWork.BookRepository.Get().ToList().ToBookModelsList(_unitOfWork));
+                    Close();
+
                 }
-                unitOfWork.Save();
-                _booksDisplayViewModel.Books = 
-                    new ObservableCollection<BookModel>(unitOfWork.BookRepository.Get().ToList().ToBookModelsList(unitOfWork));
-                Close();
+                else
+                {
+                    MessageBox.Show("Введено неправильні дані");
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Введено неправильні дані");
+                MessageBox.Show("Opps...Smth went wrong. Try again later");
+            }
+        }
+
+
+        public void AddBook(Book book, List<Author> authors)
+        {   
+            _unitOfWork.BookRepository.Insert(book);
+
+            foreach (var a in authors)
+            {
+                a.Books.Add(book);
+                _unitOfWork.AuthorRepository.Update(a);
+            }
+          
+        }
+
+        public void EditBook(Book newBook)
+        {
+            var bookToChange = _unitOfWork.BookRepository.GetById(_editedBookId);
+            if (bookToChange != null)
+            {
+                bookToChange.Authors = newBook.Authors;
+                bookToChange.Genre = newBook.Genre;
+                bookToChange.Language = newBook.Language;
+                bookToChange.Location = newBook.Location;
+                bookToChange.Name = newBook.Name;
+                bookToChange.Pages = newBook.Pages;
+                bookToChange.Publisher = newBook.Publisher;
+                bookToChange.Year = newBook.Year;
+
+                _unitOfWork.BookRepository.Update(bookToChange);
             }
         }
 
@@ -163,19 +246,19 @@ namespace Library.AddWindows
 
         private void addGenreButton_Click(object sender, RoutedEventArgs e)
         {
-            AddNewGenreWindow addNewGenreWindow = new AddNewGenreWindow(_creatingBookViewModel, unitOfWork);
+            AddNewGenreWindow addNewGenreWindow = new AddNewGenreWindow(_creatingBookViewModel, _unitOfWork);
             addNewGenreWindow.ShowDialog();
         }
 
         private void addPublisherButton_Click(object sender, RoutedEventArgs e)
         {
-            AddNewPublisherWindow addNewGenreWindow = new AddNewPublisherWindow(_creatingBookViewModel, unitOfWork);
+            AddNewPublisherWindow addNewGenreWindow = new AddNewPublisherWindow(_creatingBookViewModel, _unitOfWork);
             addNewGenreWindow.ShowDialog();
         }
 
         private void addLanguageButton_Click(object sender, RoutedEventArgs e)
         {
-            AddNewLanguageWindow addNewLanguageWindow = new AddNewLanguageWindow(_creatingBookViewModel, unitOfWork);
+            AddNewLanguageWindow addNewLanguageWindow = new AddNewLanguageWindow(_creatingBookViewModel, _unitOfWork);
             addNewLanguageWindow.ShowDialog();
         }
 
@@ -187,6 +270,11 @@ namespace Library.AddWindows
 
         private void oneMoreAuthor_Click(object sender, RoutedEventArgs e)
         {
+            CreateNewComboBox();
+        }
+
+        public ComboBox CreateNewComboBox()
+        {
             AddNewBook.Height += 25;
             mainGrid.Height += 25;
             stackPanel.Height += 25;
@@ -196,14 +284,10 @@ namespace Library.AddWindows
             MoveControlDown(cancelButton, 25);
             MoveControlDown(oneMoreAuthor, 25);
 
-            //TextBox lastTextBox = (TextBox)authorsGrid.Children[authorsGrid.Children.Count - 1];
-
-            //var marginForNewButton = lastTextBox.Margin;
-            //marginForNewButton.Top += 20;
-
             ComboBox newAuthorComboBox = new ComboBox();
+            newAuthorComboBox.SelectedValuePath = "AuthorId";
             newAuthorComboBox.HorizontalAlignment = HorizontalAlignment.Left;
-            newAuthorComboBox.Margin = new Thickness(0,marginTopValue,0,0);
+            newAuthorComboBox.Margin = new Thickness(0, marginTopValue, 0, 0);
             newAuthorComboBox.Height = 20;
             newAuthorComboBox.Width = 105;
             Binding b = new Binding("Authors")
@@ -211,7 +295,6 @@ namespace Library.AddWindows
                 Source = DataContext
             };
             newAuthorComboBox.SetBinding(ComboBox.ItemsSourceProperty, b);
-            //newAuthorTextBox.ItemsSource = viewModel.Authors;
             newAuthorComboBox.IsEditable = true;
 
             stackPanel.Children.Add(newAuthorComboBox);
@@ -220,9 +303,11 @@ namespace Library.AddWindows
             removeButton.Height = 20;
             removeButton.Content = "Забрати";
             removeButton.Margin = new Thickness(0, marginTopValue, 0, 0);
-            removeButton.Click  += removeButton_Click;
+            removeButton.Click += removeButton_Click;
 
             stackPanelRemove.Children.Add(removeButton);
+
+            return newAuthorComboBox;
         }
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
@@ -240,8 +325,6 @@ namespace Library.AddWindows
             MoveControlDown(cancelButton, -25);
             MoveControlDown(oneMoreAuthor, -25);
         }
-
-
 
         public void MoveControlDown(Control control, double valueToMove)
         {

@@ -17,10 +17,10 @@
         <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="20" Margin="132,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105"/>
         <TextBox x:Name="yearTextBox" HorizontalAlignment="Left" Height="20" Margin="132,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105"/>
         <TextBox x:Name="pagesTextBox" HorizontalAlignment="Left" Height="20" Margin="132,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105"/>
-        <ComboBox x:Name="genreComboBox" IsEditable="True" HorizontalAlignment="Left" Margin="132,88,0,0" VerticalAlignment="Top" Width="105" ItemsSource="{Binding Genres}"/>
+        <ComboBox x:Name="genreComboBox" IsEditable="True" HorizontalAlignment="Left" Margin="132,88,0,0" VerticalAlignment="Top" Width="105" ItemsSource="{Binding Genres}" SelectedValuePath="GenreName"/>
         <!--SelectedItem="{Binding LanguageId}" DisplayMemberPath="{Binding LanguageName}"-->
-        <ComboBox x:Name="languageComboBox" IsEditable="True" HorizontalAlignment="Left" Margin="132,115,0,0" VerticalAlignment="Top" Width="105" ItemsSource="{Binding Languages}"/>
-        <ComboBox x:Name="publisherComboBox" IsEditable="True" HorizontalAlignment="Left" Margin="132,142,0,0" VerticalAlignment="Top" Width="105" ItemsSource="{Binding Publishers}" />
+        <ComboBox x:Name="languageComboBox" IsEditable="True" HorizontalAlignment="Left" Margin="132,115,0,0" VerticalAlignment="Top" Width="105" ItemsSource="{Binding Languages}" SelectedValuePath="LanguageName"/>
+        <ComboBox x:Name="publisherComboBox" IsEditable="True" HorizontalAlignment="Left" Margin="132,142,0,0" VerticalAlignment="Top" Width="105" ItemsSource="{Binding Publishers}" SelectedValuePath="PublisherName"/>
         <Label x:Name="authotsLabel"  Content="Автори" HorizontalAlignment="Left" Margin="21,197,0,0" VerticalAlignment="Top" Width="90"/>
         <TextBox x:Name="locationTextBox" HorizontalAlignment="Left" Height="20" Margin="132,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105"/>
         <Button x:Name="addGenreButton" Content="Додати новий жанр" HorizontalAlignment="Left" Margin="255,90,0,0" VerticalAlignment="Top" Width="125" Height="21" Click="addGenreButton_Click"/>
@@ -31,7 +31,7 @@
         <Button x:Name="addAuthor" Content="Додати нового автора" HorizontalAlignment="Left" Margin="257,194,0,0" VerticalAlignment="Top" Width="163" Height="21" Click="addAuthor_Click"/>
         <Button x:Name="oneMoreAuthor" Content="Ще один автор" HorizontalAlignment="Left" Margin="132,246,0,0" VerticalAlignment="Top" Width="105" Height="20" RenderTransformOrigin="-0.16,0.412" Click="oneMoreAuthor_Click"/>
         <StackPanel x:Name="stackPanel" HorizontalAlignment="Left" Height="100" Margin="132,206,0,0" VerticalAlignment="Top" Width="105">
-            <ComboBox x:Name="authorComboBox" IsEditable="True" ItemsSource="{Binding Authors}"/>
+            <ComboBox x:Name="authorComboBox" IsEditable="True"  ItemsSource="{Binding Authors}" SelectedValuePath="AuthorId"/>
             <!--<ComboBox x:Name="authorComboBox" IsEditable="True" HorizontalAlignment="Left" Height="20" Margin="0,0,-5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" RenderTransformOrigin="0.505,1"/>-->
         </StackPanel>
         <StackPanel x:Name="stackPanelRemove" HorizontalAlignment="Left" Margin="253,226,0,62" Width="100"/>
