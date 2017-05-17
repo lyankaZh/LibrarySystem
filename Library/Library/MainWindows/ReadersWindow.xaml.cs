@@ -27,7 +27,7 @@ namespace Library.MainWindows
                 DataContext = _readersDisplayViewModel;
                 List<string> criterias = new List<string>
                 {
-                    "First Name", "Last Name", "Middle name", "Address", "Phone number"
+                    "FirstName", "LastName", "MiddleName", "Address", "Phonenumber"
                 };
                 searchCriteriaComboBox.ItemsSource = criterias;
             }
@@ -125,96 +125,56 @@ namespace Library.MainWindows
 
         private void searchButton_Click(object sender, RoutedEventArgs e)
         {
-            //if (searchButton.Content != null && searchButton.Content.ToString() == "Search")
-            //{
-            //    var criteria = searchCriteriaComboBox.SelectedItem;
-            //    if (criteria == null)
-            //    {
-            //        return;
-            //    }
-            //    if (!string.IsNullOrEmpty(criteria.ToString()) && searchTextTextBox.Text != "Enter text here...")
-            //    {
-            //        switch (criteria.ToString())
-            //        {
-            //            case "Book":
-            //                _booksDisplayViewModel.Books = new ObservableCollection<BookModel>(
-            //                                  _unitOfWork.BookRepository.Get(x => x.Name.ToLower()
-            //                                  .Contains(searchTextTextBox.Text.ToLower())).ToList()
-            //                                  .ToBookModelsList(_unitOfWork));
-            //                break;
+            if (searchButton.Content != null && searchButton.Content.ToString() == "Search")
+            {
+                var criteria = searchCriteriaComboBox.SelectedItem;
+                if (criteria == null)
+                {
+                    return;
+                }
+                if (!string.IsNullOrEmpty(criteria.ToString()) && searchTextTextBox.Text != "Enter text here...")
+                {
+                    switch (criteria.ToString())
+                    {
+                        case "FirstName":
+                            _readersDisplayViewModel.Readers = new ObservableCollection<Reader>(
+                                              _unitOfWork.ReaderRepository.Get(x => x.FirstName.ToLower()
+                                              .Contains(searchTextTextBox.Text.ToLower())));
+                            break;
 
-            //            case "Author":
-            //                var authorsList = new List<Book>();
-            //                foreach (var book in _unitOfWork.BookRepository.Get())
-            //                {
-            //                    foreach (var author in book.Authors)
-            //                    {
-            //                        if (author.FirstName.ToLower().Contains(searchTextTextBox.Text.ToLower())
-            //                            || author.LastName.ToLower().Contains(searchTextTextBox.Text.ToLower()))
-            //                        {
-            //                            authorsList.Add(book);
-            //                        }
-            //                        else if (author.MiddleName?.ToLower().Contains(searchTextTextBox.Text.ToLower()) == true)
-            //                        {
-            //                            authorsList.Add(book);
-            //                        }
-            //                    }
-            //                }
+                        case "LastName":
+                            _readersDisplayViewModel.Readers = new ObservableCollection<Reader>(
+                                              _unitOfWork.ReaderRepository.Get(x => x.LastName.ToLower()
+                                              .Contains(searchTextTextBox.Text.ToLower())));
+                            break;
 
-            //                _booksDisplayViewModel.Books = new ObservableCollection<BookModel>(
-            //                    authorsList.ToBookModelsList(_unitOfWork));
+                        case "Address":
+                            _readersDisplayViewModel.Readers = new ObservableCollection<Reader>(
+                                             _unitOfWork.ReaderRepository.Get(x => x.Address.ToLower()
+                                             .Contains(searchTextTextBox.Text.ToLower())));
+                            break;
 
-            //                break;
+                        case "Phonenumber":
+                            _readersDisplayViewModel.Readers = new ObservableCollection<Reader>(
+                                           _unitOfWork.ReaderRepository.Get(x => x.PhoneNumber.ToLower()
+                                           .Contains(searchTextTextBox.Text.ToLower())));
+                            break;
 
-            //            case "Genre":
-            //                _booksDisplayViewModel.Books =
-            //            new ObservableCollection<BookModel>(
-            //                _unitOfWork.BookRepository.Get(x => x.Genre.GenreName.ToLower()
-            //                .Contains(searchTextTextBox.Text.ToLower())).ToList()
-            //                .ToBookModelsList(_unitOfWork));
-            //                break;
+                      
+                    }
 
-            //            case "Language":
-            //                _booksDisplayViewModel.Books =
-            //            new ObservableCollection<BookModel>(
-            //                _unitOfWork.BookRepository.Get(x => x.Language.LanguageName.ToLower()
-            //                .Contains(searchTextTextBox.Text.ToLower())).ToList()
-            //                .ToBookModelsList(_unitOfWork));
-            //                break;
-
-            //            case "Publisher":
-            //                _booksDisplayViewModel.Books =
-            //            new ObservableCollection<BookModel>(
-            //                _unitOfWork.BookRepository.Get(x => x.Publisher.PublisherName.ToLower()
-            //                .Contains(searchTextTextBox.Text.ToLower())).ToList()
-            //                .ToBookModelsList(_unitOfWork));
-            //                break;
-
-            //            case "Year":
-            //                var year = 0;
-            //                if (int.TryParse(searchTextTextBox.Text, out year))
-            //                {
-            //                    _booksDisplayViewModel.Books =
-            //                        new ObservableCollection<BookModel>(
-            //                                _unitOfWork.BookRepository.Get(x => x.Year == year).ToList()
-            //                            .ToBookModelsList(_unitOfWork));
-            //                }
-            //                break;
-            //        }
-
-            //        searchButton.Content = "Show all";
-            //    }
-            //}
-            //else
-            //{
-            //    _booksDisplayViewModel.Books =
-            //                         new ObservableCollection<BookModel>(
-            //                                 _unitOfWork.BookRepository.Get().ToList()
-            //                             .ToBookModelsList(_unitOfWork));
-            //    searchButton.Content = "Search";
-            //    searchCriteriaComboBox.Text = "";
-            //    searchTextTextBox.Text = "Enter text here...";
-            //}
+                    searchButton.Content = "Show all";
+                }
+            }
+            else
+            {
+                _readersDisplayViewModel.Readers =
+                                     new ObservableCollection<Reader>(
+                                             _unitOfWork.ReaderRepository.Get());
+                searchButton.Content = "Search";
+                searchCriteriaComboBox.Text = "";
+                searchTextTextBox.Text = "Enter text here...";
+            }
         }
     }
 }
