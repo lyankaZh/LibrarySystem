@@ -56,7 +56,7 @@ namespace Library.MainWindows
 
         private void editCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            EditBook();
+            EditReader();
         }
         private void deleteCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -73,31 +73,31 @@ namespace Library.MainWindows
                 System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
-                DeleteBook();
+                DeleteReader();
             }
         }
 
-        public void EditBook()
+        public void EditReader()
         {
-            //var bookModel = readersTable.SelectedItem as BookModel;
-            //if (bookModel != null)
-            //{
-            //    var bookCreatingWindow = new AddWindows.AddNewBookWindow(_unitOfWork, _readersDisplayViewModel, bookModel);
-            //    bookCreatingWindow.ShowDialog();
-            //}
+            var reader = readersTable.SelectedItem as Reader;
+            if (reader != null)
+            {
+                var readersAddingWindow = new AddWindows.AddNewReaderWindow(_unitOfWork, _readersDisplayViewModel, reader);
+                readersAddingWindow.ShowDialog();
+            }
         }
 
-        public void DeleteBook()
+        public void DeleteReader()
         {
-            //var bookModel = booksTable.SelectedItem as BookModel;
-            //if (bookModel != null)
-            //{
-            //    var book = _unitOfWork.BookRepository.GetById(bookModel.BookId);
-            //    _unitOfWork.BookRepository.Delete(book);
-            //    _unitOfWork.Save();
-            //    _booksDisplayViewModel.Books =
-            //        new ObservableCollection<BookModel>(_unitOfWork.BookRepository.Get().ToList().ToBookModelsList(_unitOfWork));
-            //}
+            var reader = readersTable.SelectedItem as Reader;
+            if (reader != null)
+            {
+               
+                _unitOfWork.ReaderRepository.Delete(reader);
+                _unitOfWork.Save();
+                _readersDisplayViewModel.Readers =
+                    new ObservableCollection<Reader>(_unitOfWork.ReaderRepository.Get());
+            }
         }
 
         public void RemoveText()
