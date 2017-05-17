@@ -1,12 +1,44 @@
-﻿<Window x:Class="Library.ReadersWindow"
+﻿<Window x:Class="Library.MainWindows.ReadersWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="ReadersWindow" Height="300" Width="300">
+        Title="ReadersWindow" Height="550.568" Width="785.796">
+    <Window.Resources>
+        <RoutedUICommand x:Key="Edit" Text="Edit" />
+        <RoutedUICommand x:Key="Delete" Text="Delete" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Edit}" CanExecute="editCommand_CanExecute" Executed="editCommand_Executed" />
+        <CommandBinding Command="{StaticResource Delete}" CanExecute="deleteCommand_CanExecute" Executed="deleteCommand_Executed" />
+    </Window.CommandBindings>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="923*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="926" Height="50" Grid.ColumnSpan="2">
+            <Button x:Name="addReaderButton" Content="Add Reader" Height="37" VerticalAlignment="Top" Width="75" Click="addBookButton_Click"/>
+            <Button x:Name="editReaderButton" Command ="{StaticResource Edit}" Content="Edit" Height="37" VerticalAlignment="Top" Width="58" />
+            <Button x:Name="deleteReaderButton" Command ="{StaticResource Delete}" Content="Delete" Height="37" VerticalAlignment="Top" Width="62" />
+            <Label x:Name="label" Content="Search criteria:" Height="37" VerticalAlignment="Top" Margin="0,5,0,-5"/>
+            <ComboBox x:Name="searchCriteriaComboBox" Height="37" Margin="0" VerticalAlignment="Top" Width="120" Text="Критерій пошуку" ItemsSource="{Binding criterias}"/>
+            <TextBox x:Name="searchTextTextBox" Height="37" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Enter text here..." GotFocus="searchTextTextBox_GotFocus" LostFocus="searchTextTextBox_LostFocus"/>
+            <Button x:Name="searchButton" Content="Search" Height="37" VerticalAlignment="Top" Width="59" Click="searchButton_Click"/>
+        </ToolBar>
+        <DataGrid x:Name="readersTable" Margin="16,55,29,0" VerticalAlignment="Top" Height="294" AutoGenerateColumns="False" ItemsSource="{Binding Readers}" IsReadOnly="True" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding ReaderId}" />
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Middle name" Binding="{Binding MiddleName}" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" />
+                <DataGridTextColumn Header="Phone number" Binding="{Binding PhoneNumber}" />
+                <DataGridTextColumn Header="Registration date" Binding="{Binding RegistrationDate, StringFormat=\{0:dd.MM.yy\}}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

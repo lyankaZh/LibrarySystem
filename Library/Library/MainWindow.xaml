@@ -12,26 +12,44 @@
 
 
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="58*"/>
-            <ColumnDefinition Width="839*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="881*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="booksButton" Content="Книги" Grid.Column="1" HorizontalAlignment="Left" Margin="95,141,0,0" VerticalAlignment="Top" Width="161" Height="45" FontFamily="Blackadder ITC" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="booksButton_Click">
+        <Button x:Name="booksButton" Content="Books" Grid.Column="1" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" Width="206" Height="45" FontFamily="Bookman Old Style" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="booksButton_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFF5C277" Opacity="0.5"/>
             </Button.Background>
-      
+
         </Button>
-        <Button x:Name="readersButton" Content="Читачі" Grid.Column="1" HorizontalAlignment="Left" Margin="95,224,0,0" VerticalAlignment="Top" Width="161" Height="45" FontFamily="Blackadder ITC" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="readersButton_Click">
+        <Button x:Name="readersButton" Content="Readers" Grid.Column="1" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="206" Height="45" FontFamily="Bookman Old Style" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="readersButton_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFF5C277" Opacity="0.5"/>
             </Button.Background>
         </Button>
-        <Button x:Name="borrowButton" Content="Облік" Grid.Column="1" HorizontalAlignment="Left" Margin="95,305,0,0" VerticalAlignment="Top" Width="161" Height="45" FontFamily="Blackadder ITC" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="borrowButton_Click">
+        <Button x:Name="borrowButton" Content="Borrow" Grid.Column="1" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top" Width="206" Height="45" FontFamily="Bookman Old Style" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="borrowButton_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFF5C277" Opacity="0.5"/>
             </Button.Background>
+        </Button>
+        <Button x:Name="authorsButton" Content="Authors" Grid.Column="1" HorizontalAlignment="Left" Margin="268,141,0,0" VerticalAlignment="Top" Width="217" Height="45" FontFamily="Bookman Old Style" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="booksButton_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFF5C277" Opacity="0.5"/>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="publishersButton" Content="Publishers" Grid.Column="1" HorizontalAlignment="Left" Margin="268,222,0,0" VerticalAlignment="Top" Width="217" Height="45" FontFamily="Bookman Old Style" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="booksButton_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFF5C277" Opacity="0.5"/>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="genresLangButton" Content="Genres&amp;Languages" Grid.Column="1" HorizontalAlignment="Left" Margin="268,305,0,0" VerticalAlignment="Top" Width="217" Height="45" FontFamily="Bookman Old Style" FontSize="20" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="1,0" Click="booksButton_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFF5C277" Opacity="0.5"/>
+            </Button.Background>
+
         </Button>
 
     </Grid>

@@ -31,8 +31,7 @@ namespace Library.MainWindows
                 {
                     "Book", "Author", "Genre", "Publisher", "Language", "Year"
                 };
-               
-                searchCriteriaComboBox.ItemsSource = criterias;
+               searchCriteriaComboBox.ItemsSource = criterias;
             }
             else
             {

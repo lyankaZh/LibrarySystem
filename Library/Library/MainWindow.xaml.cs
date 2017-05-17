@@ -1,5 +1,6 @@
 ﻿using Domain.Repository;
 using System.Windows;
+using Library.MainWindows;
 
 namespace Library
 {
@@ -72,7 +73,8 @@ namespace Library
 
         private void readersButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var readersWindow = new ReadersWindow(unitOfWork);
+            readersWindow.ShowDialog();
         }
 
         private void borrowButton_Click(object sender, RoutedEventArgs e)

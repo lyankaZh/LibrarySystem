@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="ViewModels\BooksDisplayViewModel.cs" />
     <Compile Include="ViewModels\CreatingBookViewModel.cs" />
+    <Compile Include="ViewModels\ReadersDisplayViewModel.cs" />
     <Page Include="AddWindows\AddNewAuthorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
