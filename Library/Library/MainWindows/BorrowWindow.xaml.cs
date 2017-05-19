@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using Domain.Models;
 using Domain.Repository;
+using Library.AddWindows;
 using Library.ViewModels;
 
 namespace Library.MainWindows
@@ -42,8 +43,8 @@ namespace Library.MainWindows
 
         private void markCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Has reader returned book?", "Mark Confirmation",
-                System.Windows.MessageBoxButton.YesNo);
+            var messageBoxResult = MessageBox.Show("Has reader returned book?", "Mark Confirmation",
+                MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 MarkAsReturned();
@@ -60,8 +61,8 @@ namespace Library.MainWindows
 
         private void deleteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation",
-                System.Windows.MessageBoxButton.YesNo);
+            var messageBoxResult = MessageBox.Show("Are you sure?", "Delete Confirmation",
+                MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 DeleteBorrowInfo();
@@ -117,7 +118,7 @@ namespace Library.MainWindows
 
         private void addOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            var borrowCreatingWindow = new AddWindows.AddOrderWindow(_unitOfWork, _borrowInfoDisplayViewModel);
+            var borrowCreatingWindow = new AddOrderWindow(_unitOfWork, _borrowInfoDisplayViewModel);
             borrowCreatingWindow.ShowDialog();
         }
     }

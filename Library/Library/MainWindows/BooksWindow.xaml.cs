@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using Domain.Models;
 using Domain.Repository;
+using Library.AddWindows;
 using Library.Helpers;
 using Library.ViewModels;
 
@@ -25,7 +26,7 @@ namespace Library.MainWindows
             if (_booksDisplayViewModel.Books.Any())
             {
                 DataContext = _booksDisplayViewModel;
-                List<string> criterias = new List<string>
+                var criterias = new List<string>
                 {
                     "Book", "Author", "Genre", "Publisher", "Language", "Year"
                 };
@@ -42,7 +43,7 @@ namespace Library.MainWindows
 
         private void addBookButton_Click(object sender, RoutedEventArgs e)
         {
-            var bookCreatingWindow = new AddWindows.AddNewBookWindow(_unitOfWork, _booksDisplayViewModel);
+            var bookCreatingWindow = new AddNewBookWindow(_unitOfWork, _booksDisplayViewModel);
             bookCreatingWindow.ShowDialog();
         }
 
@@ -70,8 +71,8 @@ namespace Library.MainWindows
 
         private void deleteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation",
-                System.Windows.MessageBoxButton.YesNo);
+            var messageBoxResult = MessageBox.Show("Are you sure?", "Delete Confirmation",
+                MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 DeleteBook();
@@ -83,7 +84,7 @@ namespace Library.MainWindows
             var bookModel = booksTable.SelectedItem as BookModel;
             if (bookModel != null)
             {
-                var bookCreatingWindow = new AddWindows.AddNewBookWindow(_unitOfWork, _booksDisplayViewModel, bookModel);
+                var bookCreatingWindow = new AddNewBookWindow(_unitOfWork, _booksDisplayViewModel, bookModel);
                 bookCreatingWindow.ShowDialog();
             }
         }

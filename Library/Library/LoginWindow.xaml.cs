@@ -1,6 +1,6 @@
 ﻿using System.Windows;
-using Domain.Repository;
 using Domain;
+using Domain.Repository;
 
 namespace Library
 {
@@ -20,7 +20,7 @@ namespace Library
             var user = unitOfWork.UserRepository.GetById(login);
             if (user != null && user.Password == Encryptor.Encrypt(pass))
             {
-                MainWindow window = new MainWindow();
+                var window = new MainWindow();
                 window.Show();
                 Close();
             }

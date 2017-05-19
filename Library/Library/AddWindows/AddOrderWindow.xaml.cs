@@ -9,9 +9,9 @@ using Library.ViewModels;
 
 namespace Library.AddWindows
 {
-    public partial class AddOrderWindow : Window
+    public partial class AddOrderWindow
     {
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly BorrowInfoDisplayViewModel _borrowDisplayViewModel;
 
         public AddOrderWindow(IUnitOfWork unitOfWork, BorrowInfoDisplayViewModel borrowDisplayViewModel)
@@ -22,7 +22,6 @@ namespace Library.AddWindows
             readerComboBox.ItemsSource = _unitOfWork.ReaderRepository.Get();
             bookComboBox.ItemsSource =
                 _unitOfWork.BookRepository.Get().Where(x => LibraryHelper.IsInLibrary(x, _unitOfWork));
-
         }
 
 
@@ -84,12 +83,7 @@ namespace Library.AddWindows
                 return false;
             }
            
-            if (!int.TryParse(periodTextBox.Text, out result))
-            {
-                return false;
-            }
-
-            return true;
+            return int.TryParse(periodTextBox.Text, out result);
         }
     }
 }

@@ -10,7 +10,9 @@ namespace Domain.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
+        [Required]
         public virtual Reader Reader { get; set; }
+        [Required]
         public virtual Book Book { get; set; }
         public DateTime? BorrowDate { get; set; }
         public int BorrowPeriodInDays { get; set; }

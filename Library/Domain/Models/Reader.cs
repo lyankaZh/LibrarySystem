@@ -9,8 +9,10 @@ namespace Domain.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ReaderId { get; set; }
+        [Required]
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
+        [Required]
         public string LastName { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }

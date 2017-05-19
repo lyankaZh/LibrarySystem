@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 using Domain.Models;
 
 namespace Library
@@ -19,7 +16,7 @@ namespace Library
         {
             if (Authors != null && Authors.Count!=0)
             {
-                StringBuilder stringToReturn = new StringBuilder();
+                var stringToReturn = new StringBuilder();
                 foreach (var author in Authors)
                 {
                     stringToReturn.Append($"{author},");

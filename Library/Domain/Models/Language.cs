@@ -8,6 +8,7 @@ namespace Domain.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int LanguageId { get; set; }
+        [Required]
         public string LanguageName { get; set; }
 
         public override string ToString()

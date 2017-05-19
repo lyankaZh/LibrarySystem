@@ -5,11 +5,8 @@ using Domain.Models;
 using Domain.Repository;
 using Library.ViewModels;
 
-namespace Library
+namespace Library.AddWindows
 {
-    /// <summary>
-    /// Interaction logic for AddNewAuthor.xaml
-    /// </summary>
     public partial class AddNewAuthorWindow : Window
     {
         UnitOfWork unitOfWork = new UnitOfWork();
@@ -30,7 +27,7 @@ namespace Library
         {
             if (!string.IsNullOrEmpty(surnameTextBox.Text) && !string.IsNullOrEmpty(nameTextBox.Text))
             {
-                var author =new Author()
+                var author =new Author
                 {
                     FirstName = nameTextBox.Text,
                     LastName = surnameTextBox.Text

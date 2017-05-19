@@ -9,9 +9,11 @@ namespace Domain.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int AuthorId { get; set; }
-        
+
+        [Required]
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
+        [Required]
         public string LastName { get; set; }
         public virtual List<Book> Books { get; set; }
 
@@ -21,10 +23,7 @@ namespace Domain.Models
             {
                 return $"{LastName} {FirstName}";
             }
-            else
-            {
-                return $"{LastName} {FirstName[0]}. {MiddleName[0]}.";
-            }
+            return $"{LastName} {FirstName[0]}. {MiddleName[0]}.";
         }
     }
 }

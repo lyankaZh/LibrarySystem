@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using Domain.Models;
 using Domain.Repository;
@@ -54,7 +53,7 @@ namespace Library.AddWindows
             //{
                 if (AreTextFieldsValid())
                 {
-                    var reader = new Reader()
+                    var reader = new Reader
                     {
                         ReaderId = _editedReaderId,
                         LastName = lastNameTextBox.Text,

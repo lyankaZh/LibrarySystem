@@ -10,6 +10,7 @@ namespace Domain.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int BookId { get; set; }
+        [Required]
         public string Name { get; set; }
         public int Year { get; set; }
         public virtual Publisher Publisher { get; set; }
@@ -21,11 +22,11 @@ namespace Domain.Models
 
         public override string ToString()
         {
-            StringBuilder stringToReturn = new StringBuilder();
+            var stringToReturn = new StringBuilder();
             stringToReturn.Append(Name + ", ");
             foreach (var author in Authors)
             {
-                stringToReturn.Append(author.ToString() + ",");
+                stringToReturn.Append(author + ",");
             }
             stringToReturn = stringToReturn.Remove(stringToReturn.Length - 1, 1);
             return stringToReturn.ToString();

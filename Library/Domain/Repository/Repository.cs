@@ -40,10 +40,7 @@ namespace Domain.Repository
             {
                 return orderBy(query).ToList();
             }
-            else
-            {
-                return query.ToList();
-            }
+            return query.ToList();
         }
 
         public virtual TEntity GetById(object id)
@@ -58,7 +55,7 @@ namespace Domain.Repository
 
         public virtual void Delete(object id)
         {
-            TEntity entityToDelete = DbSet.Find(id);
+            var entityToDelete = DbSet.Find(id);
             if (entityToDelete != null)
             {
                 Delete(entityToDelete);

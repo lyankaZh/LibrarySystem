@@ -6,6 +6,7 @@ namespace Domain.Models
     {
         [Key]
         public string Login { get; set; }
+        [Required]
         public string Password { get; set; }
     }
 }

@@ -32,7 +32,7 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 
 
-namespace Library {
+namespace Library.AddWindows {
     
     
     /// <summary>

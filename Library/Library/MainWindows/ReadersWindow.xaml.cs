@@ -7,7 +7,6 @@ using System.Windows.Input;
 using Domain.Models;
 using Domain.Repository;
 using Library.AddWindows;
-using Library.Helpers;
 using Library.ViewModels;
 
 namespace Library.MainWindows
@@ -25,7 +24,7 @@ namespace Library.MainWindows
             if (_readersDisplayViewModel.Readers.Any())
             {
                 DataContext = _readersDisplayViewModel;
-                List<string> criterias = new List<string>
+                var criterias = new List<string>
                 {
                     "FirstName", "LastName", "MiddleName", "Address", "Phonenumber"
                 };
@@ -69,8 +68,8 @@ namespace Library.MainWindows
 
         private void deleteCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation",
-                System.Windows.MessageBoxButton.YesNo);
+            var messageBoxResult = MessageBox.Show("Are you sure?", "Delete Confirmation",
+                MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 DeleteReader();
@@ -82,7 +81,7 @@ namespace Library.MainWindows
             var reader = readersTable.SelectedItem as Reader;
             if (reader != null)
             {
-                var readersAddingWindow = new AddWindows.AddNewReaderWindow(_unitOfWork, _readersDisplayViewModel, reader);
+                var readersAddingWindow = new AddNewReaderWindow(_unitOfWork, _readersDisplayViewModel, reader);
                 readersAddingWindow.ShowDialog();
             }
         }

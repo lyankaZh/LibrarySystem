@@ -9,11 +9,11 @@ namespace Library.Helpers
     {
         public static List<BookModel> ToBookModelsList(this IEnumerable<Book> books, IUnitOfWork unitOfWork)
         {
-            List<BookModel> booksModels = new List<BookModel>();
+            var booksModels = new List<BookModel>();
             foreach (var book in books)
             {
                 booksModels.Add(
-                    new BookModel()
+                    new BookModel
                     {
                         Authors = new AuthorsList(book.Authors),
                         BookId = book.BookId,

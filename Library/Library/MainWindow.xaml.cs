@@ -1,5 +1,5 @@
-﻿using Domain.Repository;
-using System.Windows;
+﻿using System.Windows;
+using Domain.Repository;
 using Library.MainWindows;
 
 namespace Library
@@ -67,7 +67,7 @@ namespace Library
 
         private void booksButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindows.BooksWindow booksWindow = new MainWindows.BooksWindow(unitOfWork);
+            var booksWindow = new BooksWindow(unitOfWork);
             booksWindow.ShowDialog();
         }
 

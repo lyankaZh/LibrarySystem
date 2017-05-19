@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.Entity;
-using Domain.Models;
 
 namespace Domain.Models
 {
@@ -27,16 +25,14 @@ namespace Domain.Models
     {
         protected override void Seed(LibraryDbContext context)
         {
-
-            User user = new User()
+            var user = new User
             {
                 Login = "user",
                 Password = Encryptor.Encrypt("123")
             };
 
             context.Users.Add(user);
-
-            Reader reader = new Reader()
+            var reader = new Reader
             {
                 Address = "Wall Str. 5/3",
                 FirstName = "John",
@@ -50,6 +46,7 @@ namespace Domain.Models
             var genre = new Genre {GenreName = "Adventures"};
             var language = new Language {LanguageName = "English"};
             var publisher = new Publisher {City = "Las Vegas", Country = "USA", PublisherName = "ABC"};
+
             context.Genres.Add(genre);
             context.Languages.Add(language);
             context.Publishers.Add(publisher);
@@ -60,7 +57,7 @@ namespace Domain.Models
                 LastName = "Twain"
             };
 
-            var book = new Book()
+            var book = new Book
             {
                 Name = "The Adventures of Tom Sawyer",
                 Genre = genre,
@@ -71,6 +68,7 @@ namespace Domain.Models
                 Year = 1876,
                 Authors = new List<Author> {author}
             };
+
             context.Authors.Add(author);
             context.Books.Add(book);
             var borrowInfo = new BorrowInfo

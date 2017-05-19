@@ -5,18 +5,17 @@ using Domain.Models;
 using Domain.Repository;
 using Library.ViewModels;
 
-namespace Library
+namespace Library.AddWindows
 {
     public partial class AddNewGenreWindow: Window
     {
         readonly IUnitOfWork _unitOfWork;
-        private CreatingBookViewModel creatingBookView;
-
+        private readonly CreatingBookViewModel _creatingBookView;
 
         public AddNewGenreWindow(CreatingBookViewModel viewModel, IUnitOfWork unitOfWork)
         {
             InitializeComponent();
-            this.creatingBookView = viewModel;
+            _creatingBookView = viewModel;
             _unitOfWork = unitOfWork;
         }
 
@@ -41,17 +40,17 @@ namespace Library
                     });
                        
                     _unitOfWork.Save();
-                    creatingBookView.Genres = new ObservableCollection<Genre>(_unitOfWork.GenreRepository.Get().ToList());
+                    _creatingBookView.Genres = new ObservableCollection<Genre>(_unitOfWork.GenreRepository.Get().ToList());
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("Такий жанр уже існує!");
+                    MessageBox.Show("Such genre already exists!");
                 }
             }
             else
             {
-                MessageBox.Show("Неможливо додати порожній жанр!");
+                MessageBox.Show("Incorrect genre");
             }
         }
     }

@@ -23,8 +23,8 @@ namespace Library.AddWindows
         private readonly IUnitOfWork _unitOfWork;
         readonly CreatingBookViewModel _creatingBookViewModel;
         private readonly BooksDisplayViewModel _booksDisplayViewModel;
-        private int _editedBookId;
-        private OperationType _operationType;
+        private readonly int _editedBookId;
+        private readonly OperationType _operationType;
 
         private readonly double marginTopValue = 5;
 
@@ -63,7 +63,7 @@ namespace Library.AddWindows
            
             authorComboBox.SelectedValue = bookModel.Authors.Authors[0].AuthorId;
 
-            for (int i = 1; i < bookModel.Authors.Authors.Count; i++)
+            for (var i = 1; i < bookModel.Authors.Authors.Count; i++)
             {
                 CreateNewComboBox().SelectedValue = bookModel.Authors.Authors[i].AuthorId;
             }
@@ -83,21 +83,21 @@ namespace Library.AddWindows
                     var genre = ((Genre) genreComboBox.SelectedItem);
                     if (genre == null)
                     {
-                        MessageBox.Show("Вибрано неправильний жанр");
+                        MessageBox.Show("Incorrect genre");
                         return;
                     }
 
                     var language = (Language) languageComboBox.SelectedItem;
                     if (language == null)
                     {
-                        MessageBox.Show("Вибрано неправильну мову");
+                        MessageBox.Show("Incorrect language");
                         return;
                     }
 
                     var publisher = (Publisher) publisherComboBox.SelectedItem;
                     if (publisher == null)
                     {
-                        MessageBox.Show("Вибрано неправильне видавництво");
+                        MessageBox.Show("Incorrect publisher");
                         return;
                     }
 
@@ -106,19 +106,19 @@ namespace Library.AddWindows
                     var year = int.Parse(yearTextBox.Text);
                     var location = locationTextBox.Text;
 
-                    List<Author> authors = new List<Author>();
+                    var authors = new List<Author>();
                     foreach (ComboBox control in stackPanel.Children)
                     {
                         var author = (Author) control.SelectedItem;
                         if (author == null)
                         {
-                            MessageBox.Show("Вибрано неправильного автора");
+                            MessageBox.Show("Incorrect author");
                             return;
                         }
                         authors.Add(author);
                     }
 
-                    Book book = new Book
+                    var book = new Book
                     {
                         Name = name,
                         Genre = _unitOfWork.GenreRepository.GetById(genre.GenreId),
@@ -148,7 +148,7 @@ namespace Library.AddWindows
                 }
                 else
                 {
-                    MessageBox.Show("Введено неправильні дані");
+                    MessageBox.Show("Incorrect values");
                 }
             }
             catch
@@ -222,49 +222,27 @@ namespace Library.AddWindows
             return true;
         }
 
-        //private void InitializeComboBoxes()
-        //{
-        //    //var languages = from lan in unitOfWork.LanguageRepository.Get() select lan.LanguageName;
-        //    //languageComboBox.ItemsSource = languages;
-
-        //    //var genres = from g in unitOfWork.GenreRepository.Get() select g.GenreName;
-        //    //genreComboBox.ItemsSource = genres;
-
-        //    //var publishers = from p in unitOfWork.PublisherRepository.Get() select p.PublisherName;
-        //    //publisherComboBox.ItemsSource = publishers;
-        //    //ObservableCollection<Genre> genres = new ObservableCollection<Genre>(unitOfWork.GenreRepository.Get());
-          
-        //    //genreComboBox.ItemsSource = genreViewModel.Genres;
-        //    languageComboBox.ItemsSource = unitOfWork.LanguageRepository.Get();
-        //    //genreComboBox.ItemsSource = unitOfWork.GenreRepository.Get();
-        //    //genreComboBox.ItemsSource = genres;
-        //    publisherComboBox.ItemsSource = unitOfWork.PublisherRepository.Get();
-        //    authorComboBox.ItemsSource = unitOfWork.AuthorRepository.Get();
-
-
-        //}
-
         private void addGenreButton_Click(object sender, RoutedEventArgs e)
         {
-            AddNewGenreWindow addNewGenreWindow = new AddNewGenreWindow(_creatingBookViewModel, _unitOfWork);
+            var addNewGenreWindow = new AddNewGenreWindow(_creatingBookViewModel, _unitOfWork);
             addNewGenreWindow.ShowDialog();
         }
 
         private void addPublisherButton_Click(object sender, RoutedEventArgs e)
         {
-            AddNewPublisherWindow addNewGenreWindow = new AddNewPublisherWindow(_creatingBookViewModel, _unitOfWork);
+            var addNewGenreWindow = new AddNewPublisherWindow(_creatingBookViewModel, _unitOfWork);
             addNewGenreWindow.ShowDialog();
         }
 
         private void addLanguageButton_Click(object sender, RoutedEventArgs e)
         {
-            AddNewLanguageWindow addNewLanguageWindow = new AddNewLanguageWindow(_creatingBookViewModel, _unitOfWork);
+            var addNewLanguageWindow = new AddNewLanguageWindow(_creatingBookViewModel, _unitOfWork);
             addNewLanguageWindow.ShowDialog();
         }
 
         private void addAuthor_Click(object sender, RoutedEventArgs e)
         {
-            AddNewAuthorWindow addNewAuthorWindow = new AddNewAuthorWindow(_creatingBookViewModel);
+            var addNewAuthorWindow = new AddNewAuthorWindow(_creatingBookViewModel);
             addNewAuthorWindow.ShowDialog();
         }
 
@@ -284,25 +262,27 @@ namespace Library.AddWindows
             MoveControlDown(cancelButton, 25);
             MoveControlDown(oneMoreAuthor, 25);
 
-            ComboBox newAuthorComboBox = new ComboBox();
+            var newAuthorComboBox = new ComboBox();
             newAuthorComboBox.SelectedValuePath = "AuthorId";
             newAuthorComboBox.HorizontalAlignment = HorizontalAlignment.Left;
             newAuthorComboBox.Margin = new Thickness(0, marginTopValue, 0, 0);
             newAuthorComboBox.Height = 20;
             newAuthorComboBox.Width = 105;
-            Binding b = new Binding("Authors")
+            var b = new Binding("Authors")
             {
                 Source = DataContext
             };
-            newAuthorComboBox.SetBinding(ComboBox.ItemsSourceProperty, b);
+            newAuthorComboBox.SetBinding(ItemsControl.ItemsSourceProperty, b);
             newAuthorComboBox.IsEditable = true;
 
             stackPanel.Children.Add(newAuthorComboBox);
 
-            Button removeButton = new Button();
-            removeButton.Height = 20;
-            removeButton.Content = "Забрати";
-            removeButton.Margin = new Thickness(0, marginTopValue, 0, 0);
+            var removeButton = new Button
+            {
+                Height = 20,
+                Content = "Забрати",
+                Margin = new Thickness(0, marginTopValue, 0, 0)
+            };
             removeButton.Click += removeButton_Click;
 
             stackPanelRemove.Children.Add(removeButton);
@@ -312,8 +292,8 @@ namespace Library.AddWindows
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
-            Button removeButton = (Button) sender;
-            int index = stackPanelRemove.Children.IndexOf(removeButton);
+            var removeButton = (Button) sender;
+            var index = stackPanelRemove.Children.IndexOf(removeButton);
             stackPanel.Children.RemoveAt(index + 1);
             stackPanelRemove.Children.RemoveAt(index);
             AddNewBook.Height -= 25;
@@ -332,24 +312,5 @@ namespace Library.AddWindows
             margin.Top += valueToMove;
             control.Margin = margin;
         }
-        
-        //private void languageComboBox_LostFocus(object sender, RoutedEventArgs e)
-        //{
-        //    ComboBox comboBox = (ComboBox) sender;
-        //    var language = (Language) comboBox.SelectedItem;
-        //    if (language == null)
-        //    {
-        //        //languageBorder.BorderBrush = Brushes.Red;
-
-        //        saveButton.IsEnabled = false;
-        //        saveButton.ToolTip = "Вибрана неіснуюча мова";
-        //    }
-        //    else
-        //    {
-        //        languageBorder.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#FFACACAC");
-        //        saveButton.IsEnabled = true;
-        //        saveButton.ClearValue(Button.ToolTipProperty);
-        //    }   
-        //}
     }
 }
