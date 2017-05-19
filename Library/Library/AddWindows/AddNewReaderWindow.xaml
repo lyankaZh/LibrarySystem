@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Додати нового читача" Height="325.881" Width="296.455" ResizeMode="CanMinimize">
+        Title="Add new reader" Height="325.881" Width="296.455" ResizeMode="CanMinimize">
     <Grid>
         <Label x:Name="nameLabel" Content="First name" HorizontalAlignment="Left" Margin="28,66,0,0" VerticalAlignment="Top" Width="89"/>
         <Label x:Name="surnameLabel" Content="Last name" HorizontalAlignment="Left" Margin="28,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.627,-0.572" Width="74"/>

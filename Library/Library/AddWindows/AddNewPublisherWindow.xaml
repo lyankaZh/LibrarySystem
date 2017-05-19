@@ -1,4 +1,4 @@
-﻿<Window x:Class="Library.AddNewPublisherWindow"
+﻿<Window x:Class="Library.AddWindows.AddNewPublisherWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,14 +11,14 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="publisherNameLabel" Content="Назва видавництва" HorizontalAlignment="Left" Margin="30,31,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
+        <Label x:Name="publisherNameLabel" Content="Publisher Name" HorizontalAlignment="Left" Margin="30,31,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
         <TextBox x:Name="publisherNameTextBox" HorizontalAlignment="Left" Height="23" Margin="187,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.308,-0.719"/>
-        <Label x:Name="cityLabel" Content="Місто" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
-        <Label x:Name="countyLabel" Content="Країна" HorizontalAlignment="Left" Margin="30,93,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
+        <Label x:Name="cityLabel" Content="City" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
+        <Label x:Name="countyLabel" Content="Country" HorizontalAlignment="Left" Margin="30,93,0,0" VerticalAlignment="Top" Width="120" Height="29"/>
         <TextBox x:Name="cityTextBox" HorizontalAlignment="Left" Height="23" Margin="187,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.308,-0.719"/>
         <TextBox x:Name="countryTextBox" HorizontalAlignment="Left" Height="23" Margin="187,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.308,-0.719"/>
-        <Button x:Name="saveButton" Content="Зберегти" HorizontalAlignment="Left" Margin="62,172,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="saveButton_Click"/>
-        <Button x:Name="cancelButtonCopy" Content="Скасувати" HorizontalAlignment="Left" Margin="187,172,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="cancelButtonCopy_Click"/>
+        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="62,172,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="saveButton_Click"/>
+        <Button x:Name="cancelButtonCopy" Content="Cancel" HorizontalAlignment="Left" Margin="187,172,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="cancelButtonCopy_Click"/>
 
     </Grid>
 </Window>
