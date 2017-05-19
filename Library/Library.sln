@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "Domain\DAL.csproj", "{2A1B4D7B-CAD9-4932-9999-F08E85CD7C81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{9BD033F2-A746-4156-A3BC-67398090E285}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LibrarySetup", "LibrarySetup\LibrarySetup.vdproj", "{768C708B-1CA1-4ED8-84C4-8C74D175784B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,12 @@ Global
 		{2A1B4D7B-CAD9-4932-9999-F08E85CD7C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A1B4D7B-CAD9-4932-9999-F08E85CD7C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A1B4D7B-CAD9-4932-9999-F08E85CD7C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BD033F2-A746-4156-A3BC-67398090E285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD033F2-A746-4156-A3BC-67398090E285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD033F2-A746-4156-A3BC-67398090E285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD033F2-A746-4156-A3BC-67398090E285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{768C708B-1CA1-4ED8-84C4-8C74D175784B}.Debug|Any CPU.ActiveCfg = Debug
+		{768C708B-1CA1-4ED8-84C4-8C74D175784B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
