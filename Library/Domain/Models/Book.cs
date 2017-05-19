@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace Domain.Models
 {
@@ -17,5 +18,17 @@ namespace Domain.Models
         public virtual Genre Genre { get; set; }
         public string Location { get; set; }
         public virtual List<Author> Authors { get; set;}
+
+        public override string ToString()
+        {
+            StringBuilder stringToReturn = new StringBuilder();
+            stringToReturn.Append(Name + ", ");
+            foreach (var author in Authors)
+            {
+                stringToReturn.Append(author.ToString() + ",");
+            }
+            stringToReturn = stringToReturn.Remove(stringToReturn.Length - 1, 1);
+            return stringToReturn.ToString();
+        }
     }
 }

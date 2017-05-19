@@ -15,5 +15,10 @@ namespace Domain.Models
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime? RegistrationDate { get; set; }
+        
+        public override string ToString()
+        {
+            return $"{LastName} {FirstName} {MiddleName}";
+        }
     }
 }

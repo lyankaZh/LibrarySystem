@@ -3,10 +3,11 @@ using Domain.Models;
 
 namespace Domain.Repository
 {
-    public class UnitOfWork: IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly LibraryDbContext _context = new LibraryDbContext();
 
+        private Repository<User> _userRepository;
         private Repository<Author> _authorRepository;
         private Repository<Book> _bookRepository;
         private Repository<BorrowInfo> _borrowInfoRepository;
@@ -16,10 +17,13 @@ namespace Domain.Repository
         private Repository<Reader> _readerRepository;
 
 
-        public Repository<Author> AuthorRepository 
+        public Repository<User> UserRepository 
+            => _userRepository ?? (_userRepository = new Repository<User>(_context));
+
+        public Repository<Author> AuthorRepository
             => _authorRepository ?? (_authorRepository = new Repository<Author>(_context));
 
-        public Repository<Book> BookRepository 
+        public Repository<Book> BookRepository
             => _bookRepository ?? (_bookRepository = new Repository<Book>(_context));
 
         public Repository<BorrowInfo> BorrowInfoRepository

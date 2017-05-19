@@ -5,25 +5,25 @@ using Domain.Repository;
 
 namespace Library.ViewModels
 {
-    public class ReadersDisplayViewModel : INotifyPropertyChanged
+    public class BorrowInfoDisplayViewModel:INotifyPropertyChanged
     {
-        private ObservableCollection<Reader> _readers;
+        private ObservableCollection<BorrowInfo> _borrowInfo;
 
-        public ReadersDisplayViewModel(IUnitOfWork unit)
+        public BorrowInfoDisplayViewModel(IUnitOfWork unit)
         {
             var unitOfWork = unit;
-            _readers = new ObservableCollection<Reader>(unitOfWork.ReaderRepository.Get());
+            _borrowInfo = new ObservableCollection<BorrowInfo>(unitOfWork.BorrowInfoRepository.Get());
         }
 
-        public ObservableCollection<Reader> Readers
+        public ObservableCollection<BorrowInfo> BorrowInfo
         {
-            get { return _readers; }
+            get { return _borrowInfo; }
             set
             {
-                if (value != _readers)
+                if (value != _borrowInfo)
                 {
-                    _readers = value;
-                    NotifyPropertyChanged("Readers");
+                    _borrowInfo = value;
+                    NotifyPropertyChanged("BorrowInfo");
                 }
             }
         }

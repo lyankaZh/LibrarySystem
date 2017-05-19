@@ -82,3 +82,7 @@ E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\Ad
 E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindows\ReadersWindow.baml
 E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindow.g.cs
 E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\MainWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddOrderWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\AddWindows\AddOrderWindow.baml
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\LoginWindow.g.cs
+E:\EPAM\Individual project\LibrarySystem\Library\Library\obj\Debug\LoginWindow.baml

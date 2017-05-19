@@ -1,12 +1,43 @@
-﻿<Window x:Class="Library.BorrowWindow"
+﻿<Window x:Class="Library.MainWindows.BorrowWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="BorrowWindow" Height="300" Width="300">
+        Title="BorrowWindow" Height="452" Width="762">
+    <Window.Resources>
+        <RoutedUICommand x:Key="Edit" Text="Edit" />
+        <RoutedUICommand x:Key="Delete" Text="Delete" />
+        <RoutedUICommand x:Key="Mark" Text="Mark" />
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Delete}" CanExecute="deleteCommand_CanExecute" Executed="deleteCommand_Executed" />
+        <CommandBinding Command="{StaticResource Mark}" CanExecute="markCommand_CanExecute" Executed="markCommand_Executed" />
+    </Window.CommandBindings>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="582*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <ToolBar x:Name="toolBar" VerticalAlignment="Top" Height="50">
+            <Button x:Name="addOrderButton" Content="Add Order" Height="50" VerticalAlignment="Top" Width="75" Margin="0,0,0,-5" Click="addOrderButton_Click"/>
+            <Button x:Name="deleteReaderButton" Command ="{StaticResource Delete}" Content="Delete" Height="50" VerticalAlignment="Top" Width="44" Margin="0,0,0,-5" />
+            <Button x:Name="returnButton"  Command ="{StaticResource Mark}" Content="Mark as returned" Height="50" VerticalAlignment="Top" Width="96" Margin="0,0,0,-5"/>
+            <Button x:Name="deptorsButton" Content="Deptors" Height="50" VerticalAlignment="Top" Width="75" Margin="0,0,0,-5" Click="deptorsButton_Click"/>
+        </ToolBar>
         
+        <DataGrid x:Name="borrowTable" Margin="16,55,10,0" VerticalAlignment="Top" Height="294" AutoGenerateColumns="False" ItemsSource="{Binding BorrowInfo}" IsReadOnly="True" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ReaderId" Binding="{Binding Reader.ReaderId}" />
+                <DataGridTextColumn Header="Reader" Binding="{Binding Reader}" />
+                <DataGridTextColumn Header="BookId" Binding="{Binding Book.BookId}" />
+                <DataGridTextColumn Header="Book" Binding="{Binding Book}" />
+                <DataGridTextColumn Header="Borrow Date" Binding="{Binding BorrowDate, StringFormat=\{0:dd.MM.yy\}}" />
+                <DataGridTextColumn Header="Period" Binding="{Binding BorrowPeriodInDays}" />
+                <DataGridTextColumn Header="Return date" Binding="{Binding ReturningDate, StringFormat=\{0:dd.MM.yy\}}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

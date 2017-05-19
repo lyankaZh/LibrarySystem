@@ -5,6 +5,8 @@ FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewGenre
 FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewLanguageWindow.xaml;;
 FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewPublisherWindow.xaml;;
 FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddNewBookWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\AddWindows\AddOrderWindow.xaml;;
+FE:\EPAM\Individual project\LibrarySystem\Library\Library\LoginWindow.xaml;;
 FE:\EPAM\Individual project\LibrarySystem\Library\Library\MainWindows\BooksWindow.xaml;;
 FE:\EPAM\Individual project\LibrarySystem\Library\Library\MainWindows\BorrowWindow.xaml;;
 FE:\EPAM\Individual project\LibrarySystem\Library\Library\MainWindow.xaml;;

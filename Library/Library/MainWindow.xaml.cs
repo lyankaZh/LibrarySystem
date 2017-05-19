@@ -79,7 +79,8 @@ namespace Library
 
         private void borrowButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var borrowInfo = new BorrowWindow(unitOfWork);
+            borrowInfo.ShowDialog();
         }
     }
 }

@@ -27,15 +27,16 @@
         </ToolBar>
         <DataGrid x:Name="booksTable" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Height="318" Width="666" AutoGenerateColumns="False" ItemsSource="{Binding Books}" IsReadOnly="True" CanUserReorderColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Назва" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Автори" Binding="{Binding Authors}" />
-                <DataGridTextColumn Header="Рік" Binding="{Binding Year}" />
-                <DataGridTextColumn Header="К-сть сторінок" Binding="{Binding Pages}" />
-                <DataGridTextColumn Header="Жанр" Binding="{Binding Genre}" />
-                <DataGridTextColumn Header="Мова" Binding="{Binding Language}" />
-                <DataGridTextColumn Header="Видавництво" Binding="{Binding Publisher}" />
-                <DataGridTextColumn Header="Розташування" Binding="{Binding Location}" />
-                <DataGridTextColumn  Header="В наявності" Binding="{Binding IsInLibrary}" />
+                <DataGridTextColumn Header="Id" Binding="{Binding BookId}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Authors" Binding="{Binding Authors}" />
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
+                <DataGridTextColumn Header="Amount of pages" Binding="{Binding Pages}" />
+                <DataGridTextColumn Header="Genre" Binding="{Binding Genre}" />
+                <DataGridTextColumn Header="Language" Binding="{Binding Language}" />
+                <DataGridTextColumn Header="Publisher" Binding="{Binding Publisher}" />
+                <DataGridTextColumn Header="Location" Binding="{Binding Location}" />
+                <DataGridTextColumn  Header="Is in Library" Binding="{Binding IsInLibrary}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

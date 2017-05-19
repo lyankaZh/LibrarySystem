@@ -5,6 +5,7 @@ namespace Domain.Repository
 {
     public interface IUnitOfWork : IDisposable
     {
+        Repository<User> UserRepository { get; }
         Repository<Author> AuthorRepository { get; }
         Repository<Book> BookRepository { get; }
         Repository<BorrowInfo> BorrowInfoRepository { get; }

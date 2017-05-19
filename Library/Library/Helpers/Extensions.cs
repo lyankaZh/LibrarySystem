@@ -18,15 +18,15 @@ namespace Library.Helpers
                         Authors = new AuthorsList(book.Authors),
                         BookId = book.BookId,
                         Genre = book.Genre.ToString(),
-                        IsInLibrary = "yes",
+                        IsInLibrary = LibraryHelper.IsInLibrary(book, unitOfWork) ? "yes" : "no",
                         Language = book.Language.ToString(),
                         Location = book.Location,
                         Name = book.Name,
                         Pages = book.Pages,
                         Publisher = book.Publisher.ToString(),
                         Year = book.Year
-                    }
-                    );
+                    });
+            
             }
             return booksModels;
         }

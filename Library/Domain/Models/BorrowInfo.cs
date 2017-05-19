@@ -12,8 +12,8 @@ namespace Domain.Models
         public int OrderId { get; set; }
         public virtual Reader Reader { get; set; }
         public virtual Book Book { get; set; }
-        public DateTime BorrowDate { get; set; }
+        public DateTime? BorrowDate { get; set; }
         public int BorrowPeriodInDays { get; set; }
-        public DateTime ReturningDate { get; set; }
+        public DateTime? ReturningDate { get; set; }
      }
 }
