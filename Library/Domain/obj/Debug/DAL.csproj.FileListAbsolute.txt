@@ -7,4 +7,3 @@ E:\EPAM\Individual project\LibrarySystem\Library\Domain\bin\Debug\EntityFramewor
 E:\EPAM\Individual project\LibrarySystem\Library\Domain\bin\Debug\EntityFramework.SqlServer.xml
 E:\EPAM\Individual project\LibrarySystem\Library\Domain\obj\Debug\Domain.dll
 E:\EPAM\Individual project\LibrarySystem\Library\Domain\obj\Debug\Domain.pdb
-E:\EPAM\Individual project\LibrarySystem\Library\Domain\obj\Debug\DAL.csprojResolveAssemblyReference.cache
