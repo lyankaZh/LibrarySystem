@@ -7,15 +7,15 @@ using Library.ViewModels;
 
 namespace Library.AddWindows
 {
-    public partial class AddNewAuthorWindow : Window
+    public partial class AddNewAuthorWindow 
     {
-        UnitOfWork unitOfWork = new UnitOfWork();
-        private CreatingBookViewModel viewModel;
+        readonly UnitOfWork _unitOfWork = new UnitOfWork();
+        private readonly CreatingBookViewModel _viewModel;
 
         public AddNewAuthorWindow( CreatingBookViewModel model)
         {
             InitializeComponent();
-            viewModel = model;
+            _viewModel = model;
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -36,15 +36,15 @@ namespace Library.AddWindows
                 {
                     author.MiddleName = middleNameTextBox.Text;
                 }
-                unitOfWork.AuthorRepository.Insert(author);
-                unitOfWork.Save();
+                _unitOfWork.AuthorRepository.Insert(author);
+                _unitOfWork.Save();
 
-                viewModel.Authors = new ObservableCollection<Author>(unitOfWork.AuthorRepository.Get().ToList());
+                _viewModel.Authors = new ObservableCollection<Author>(_unitOfWork.AuthorRepository.Get().ToList());
                 Close();
             }
             else
             {
-                MessageBox.Show("Вкажіть ім'я та прізвище автора");
+                MessageBox.Show("Incorrect values");
             }
         }
     }

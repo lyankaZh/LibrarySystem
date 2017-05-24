@@ -6,12 +6,12 @@ using Library.ViewModels;
 
 namespace Library.AddWindows
 {
-    public partial class AddNewReaderWindow : Window
+    public partial class AddNewReaderWindow 
     {
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ReadersDisplayViewModel _readersDisplayViewModel;
-        private int _editedReaderId;
-        private OperationType _operationType;
+        private readonly int _editedReaderId;
+        private readonly OperationType _operationType;
 
         public AddNewReaderWindow(IUnitOfWork unitOfWork, ReadersDisplayViewModel readersDisplayViewModel)
         {
@@ -49,8 +49,8 @@ namespace Library.AddWindows
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (AreTextFieldsValid())
                 {
                     var reader = new Reader
@@ -63,7 +63,7 @@ namespace Library.AddWindows
                         Address = addressTextBox.Text,
                         RegistrationDate = datePicker.SelectedDate
                     };
-                   
+
                     if (_operationType == OperationType.Create)
                     {
                         CreateReader(reader);
@@ -78,11 +78,11 @@ namespace Library.AddWindows
                 {
                     MessageBox.Show("Check your values");
                 }
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Smth went wrong. Try again");
-            //}
+            }
+            catch
+            {
+                MessageBox.Show("Smth went incorrect");
+            }
         }
 
         public void CreateReader(Reader reader)

@@ -12,10 +12,10 @@ using Library.ViewModels;
 
 namespace Library.MainWindows
 {
-    public partial class BooksWindow : Window
+    public partial class BooksWindow 
     {
         readonly IUnitOfWork _unitOfWork;
-        private BooksDisplayViewModel _booksDisplayViewModel;
+        private readonly BooksDisplayViewModel _booksDisplayViewModel;
 
         public BooksWindow(IUnitOfWork unitOfWork)
         {
@@ -193,7 +193,7 @@ namespace Library.MainWindows
                             break;
 
                         case "Year":
-                            var year = 0;
+                            int year;
                             if (int.TryParse(searchTextTextBox.Text, out year))
                             {
                                 _booksDisplayViewModel.Books =

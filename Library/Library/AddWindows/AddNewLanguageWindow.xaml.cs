@@ -5,17 +5,17 @@ using Domain.Models;
 using Domain.Repository;
 using Library.ViewModels;
 
-namespace Library
+namespace Library.AddWindows
 {
-    public partial class AddNewLanguageWindow: Window
+    public partial class AddNewLanguageWindow
     {
         private readonly IUnitOfWork _unitOfWork;
-        private CreatingBookViewModel viewModel;
+        private readonly CreatingBookViewModel _viewModel;
         public AddNewLanguageWindow( CreatingBookViewModel model, IUnitOfWork unitOfWork)
         {
             InitializeComponent();
             _unitOfWork = unitOfWork;
-            viewModel = model;
+            _viewModel = model;
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -35,7 +35,7 @@ namespace Library
                     _unitOfWork.LanguageRepository.Insert(
                         new Language {LanguageName = languageTextBox.Text});
                     _unitOfWork.Save();
-                    viewModel.Languages = new ObservableCollection<Language>(_unitOfWork.LanguageRepository.Get().ToList()); 
+                    _viewModel.Languages = new ObservableCollection<Language>(_unitOfWork.LanguageRepository.Get().ToList()); 
                     Close();
                 }
                 else

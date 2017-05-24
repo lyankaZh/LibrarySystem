@@ -5,17 +5,17 @@ using Domain.Models;
 using Domain.Repository;
 using Library.ViewModels;
 
-namespace Library
+namespace Library.AddWindows
 {
     public partial class AddNewPublisherWindow
     {
-        readonly IUnitOfWork _unitOfWork = new UnitOfWork();
-        private CreatingBookViewModel viewModel;
+        readonly IUnitOfWork _unitOfWork;
+        private readonly CreatingBookViewModel _viewModel;
 
         public AddNewPublisherWindow(CreatingBookViewModel model, IUnitOfWork unitOfWork)
         {
             InitializeComponent();
-            viewModel = model;
+            _viewModel = model;
             _unitOfWork = unitOfWork;
         }
 
@@ -46,17 +46,17 @@ namespace Library
                        );
 
                     _unitOfWork.Save();
-                    viewModel.Publishers = new ObservableCollection<Publisher>(_unitOfWork.PublisherRepository.Get().ToList());
+                    _viewModel.Publishers = new ObservableCollection<Publisher>(_unitOfWork.PublisherRepository.Get().ToList());
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("Таке видавництво уже існує!");
+                    MessageBox.Show("Publisher already exists");
                 }
             }
             else
             {
-                MessageBox.Show("Неможливо додати порожнє видавництво!");
+                MessageBox.Show("Incorrect values!");
             }
         }
     }

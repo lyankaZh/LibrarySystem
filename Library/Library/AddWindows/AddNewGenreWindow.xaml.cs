@@ -7,7 +7,7 @@ using Library.ViewModels;
 
 namespace Library.AddWindows
 {
-    public partial class AddNewGenreWindow: Window
+    public partial class AddNewGenreWindow
     {
         readonly IUnitOfWork _unitOfWork;
         private readonly CreatingBookViewModel _creatingBookView;

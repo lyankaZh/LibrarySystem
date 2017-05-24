@@ -11,10 +11,10 @@ using Library.ViewModels;
 
 namespace Library.MainWindows
 {
-   public partial class ReadersWindow : Window
-    {
+   public partial class ReadersWindow
+   {
         readonly IUnitOfWork _unitOfWork;
-        private ReadersDisplayViewModel _readersDisplayViewModel;
+        private readonly ReadersDisplayViewModel _readersDisplayViewModel;
 
         public ReadersWindow(IUnitOfWork unitOfWork)
         {

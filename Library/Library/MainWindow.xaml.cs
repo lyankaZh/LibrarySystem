@@ -6,7 +6,7 @@ namespace Library
 {
     public partial class MainWindow:Window
     {
-        IUnitOfWork unitOfWork = new UnitOfWork();
+        readonly IUnitOfWork unitOfWork = new UnitOfWork();
 
         public MainWindow()
         {

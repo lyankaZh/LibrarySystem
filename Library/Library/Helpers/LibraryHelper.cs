@@ -10,10 +10,5 @@ namespace Library.Helpers
         {
             return !unitOfWork.BorrowInfoRepository.Get().Any(x => x.Book == book && x.ReturningDate == null);
         }
-
-        //public static bool IsDeptor(Reader reader, IUnitOfWork unitOfWork)
-        //{
-        //    return !unitOfWork.BorrowInfoRepository.Get().Any(x => x.Reader == reader && x.ReturningDate == null);
-        //}
     }
 }

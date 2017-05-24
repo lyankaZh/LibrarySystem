@@ -10,10 +10,10 @@ using Library.ViewModels;
 
 namespace Library.MainWindows
 {
-    public partial class BorrowWindow : Window
+    public partial class BorrowWindow
     {
-        private IUnitOfWork _unitOfWork;
-        private BorrowInfoDisplayViewModel _borrowInfoDisplayViewModel;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly BorrowInfoDisplayViewModel _borrowInfoDisplayViewModel;
 
         public BorrowWindow(IUnitOfWork unitOfWork)
         {
