@@ -40,12 +40,12 @@ namespace Library.AddWindows
                 }
                 else
                 {
-                    MessageBox.Show("Така мова уже існує!");
+                    MessageBox.Show("Such language already exists!");
                 }
             }
             else
             {
-                MessageBox.Show("Неможливо додати порожню мову!");
+                MessageBox.Show("Can`t add empty language!");
             }
         }
     }

@@ -19,11 +19,7 @@ namespace Domain.Models
 
         public override string ToString()
         {
-            if (string.IsNullOrEmpty(MiddleName))
-            {
-                return $"{LastName} {FirstName}";
-            }
-            return $"{LastName} {FirstName[0]}. {MiddleName[0]}.";
+            return string.IsNullOrEmpty(MiddleName) ? $"{LastName} {FirstName}" : $"{LastName} {FirstName[0]}. {MiddleName[0]}.";
         }
     }
 }
