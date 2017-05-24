@@ -5,6 +5,5 @@ E:\EPAM\Individual project\LibrarySystem\Library\Database\bin\Debug\EntityFramew
 E:\EPAM\Individual project\LibrarySystem\Library\Database\bin\Debug\EntityFramework.SqlServer.dll
 E:\EPAM\Individual project\LibrarySystem\Library\Database\bin\Debug\EntityFramework.xml
 E:\EPAM\Individual project\LibrarySystem\Library\Database\bin\Debug\EntityFramework.SqlServer.xml
-E:\EPAM\Individual project\LibrarySystem\Library\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
 E:\EPAM\Individual project\LibrarySystem\Library\Database\obj\Debug\Database.dll
 E:\EPAM\Individual project\LibrarySystem\Library\Database\obj\Debug\Database.pdb
